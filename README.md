@@ -1,5 +1,5 @@
 
-# [gormt](https://github.com/xxjwxc/gormt)
+# [gormt](https://github.com/tbwisk/gormt)
 
 ## [中文文档](README_zh_cn.md)
 
@@ -141,7 +141,7 @@ go generate
 
 ![4](/image/gormt/4.jpg)
 
-[Download](https://github.com/xxjwxc/gormt/releases/download/v1.1.0/v1.0.zip)
+[Download](https://github.com/tbwisk/gormt/releases/download/v1.1.0/v1.0.zip)
 
 
 

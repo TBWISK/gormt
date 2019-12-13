@@ -1,10 +1,14 @@
 package main
 
-// import "github.com/xxjwxc/gormt/data/cmd"
+// import "github.com/tbwisk/gormt/data/cmd"
 import (
+	"fmt"
 	"net/http"
 
+	"github.com/TBWISK/gormt/data/view/model"
 	"github.com/gin-gonic/gin"
+	"github.com/tbwisk/gormt/data/view/gtools"
+	"github.com/tbwisk/gormt/dto"
 )
 
 func main() {
@@ -17,8 +21,18 @@ func main() {
 		})
 	})
 	r.POST("/", func(c *gin.Context) {
+		input := dto.IndexInput{}
+		err := input.BindingValidParams(c)
+		if err != nil {
+			fmt.Println("err", err)
+		}
+		// title := input.Format1()
+		modeldb := gtools.GetModel()
+		pkg := modeldb.GenModelNew()
+		pkg.PackageName = input.PackageName
+		title := model.Generate(pkg)
 		c.HTML(http.StatusOK, "index.html", gin.H{
-			"title": "Main website",
+			"title": title,
 		})
 	})
 	r.Run()

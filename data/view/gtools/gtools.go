@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/xxjwxc/gormt/data/view/model"
+	"github.com/tbwisk/gormt/data/view/model"
 
-	"github.com/xxjwxc/gormt/data/config"
+	"github.com/tbwisk/gormt/data/config"
 
 	"github.com/xxjwxc/public/tools"
 )
@@ -20,6 +20,7 @@ func Execute() {
 	// fmt.Println(tt)
 
 	modeldb := GetModel()
+
 	pkg := modeldb.GenModel()
 	pkg.PackageName = modeldb.GetPkgName()
 	str := model.Generate(pkg)

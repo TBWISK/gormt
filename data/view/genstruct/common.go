@@ -5,9 +5,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/xxjwxc/gormt/data/config"
-	"github.com/xxjwxc/gormt/data/view/cnf"
-	"github.com/xxjwxc/gormt/data/view/generate"
+	"github.com/tbwisk/gormt/data/config"
+	"github.com/tbwisk/gormt/data/view/cnf"
+	"github.com/tbwisk/gormt/data/view/generate"
 )
 
 // SetName Setting element name.设置元素名字

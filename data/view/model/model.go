@@ -3,8 +3,8 @@ package model
 import (
 	"strings"
 
-	"github.com/xxjwxc/gormt/data/config"
-	"github.com/xxjwxc/gormt/data/view/genstruct"
+	"github.com/tbwisk/gormt/data/config"
+	"github.com/tbwisk/gormt/data/view/genstruct"
 )
 
 type _Model struct {

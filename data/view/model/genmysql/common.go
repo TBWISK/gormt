@@ -3,7 +3,7 @@ package genmysql
 import (
 	"strings"
 
-	"github.com/xxjwxc/gormt/data/view/model"
+	"github.com/tbwisk/gormt/data/view/model"
 )
 
 // filterModel filter.过滤 gorm.Model

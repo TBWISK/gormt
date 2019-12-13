@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/xxjwxc/gormt/data/config"
-	"github.com/xxjwxc/gormt/data/view/model"
+	"github.com/tbwisk/gormt/data/config"
+	"github.com/tbwisk/gormt/data/view/model"
 	"github.com/xxjwxc/public/mysqldb"
 	"github.com/xxjwxc/public/tools"
 )
@@ -19,6 +19,15 @@ type mysqlModel struct {
 // GenModel get model.DBInfo info.获取数据库相关属性
 func (m *mysqlModel) GenModel() model.DBInfo {
 	orm := mysqldb.OnInitDBOrm(config.GetMysqlConStr())
+	defer orm.OnDestoryDB()
+
+	var dbInfo model.DBInfo
+	getPackageInfo(orm, &dbInfo)
+	return dbInfo
+}
+
+func (m *mysqlModel) GenModelNew(URL string) model.DBInfo {
+	orm := mysqldb.OnInitDBOrm(URL)
 	defer orm.OnDestoryDB()
 
 	var dbInfo model.DBInfo
