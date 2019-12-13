@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/TBWISK/gormt/data/view/model"
 	"github.com/gin-gonic/gin"
 	"github.com/tbwisk/gormt/data/view/gtools"
+	"github.com/tbwisk/gormt/data/view/model"
 	"github.com/tbwisk/gormt/dto"
 )
 
@@ -26,9 +26,9 @@ func main() {
 		if err != nil {
 			fmt.Println("err", err)
 		}
-		// title := input.Format1()
+		URL := input.Format1()
 		modeldb := gtools.GetModel()
-		pkg := modeldb.GenModelNew()
+		pkg := modeldb.GenModelNew(URL)
 		pkg.PackageName = input.PackageName
 		title := model.Generate(pkg)
 		c.HTML(http.StatusOK, "index.html", gin.H{
