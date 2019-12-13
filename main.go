@@ -35,7 +35,6 @@ func main() {
 		c.HTML(http.StatusOK, "index.html", gin.H{
 			"title": template.HTML(title),
 		})
-
 	})
 	r.Run()
 }

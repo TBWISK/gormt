@@ -13,12 +13,10 @@ import (
 
 // Execute
 func Execute() {
-
 	// var tt oauth_db.UserInfoTbl
 	// tt.Nickname = "ticket_001"
 	// orm.Where("nickname = ?", "ticket_001").Find(&tt)
 	// fmt.Println(tt)
-
 	modeldb := GetModel()
 
 	pkg := modeldb.GenModel()
