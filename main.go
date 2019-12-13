@@ -3,6 +3,7 @@ package main
 // import "github.com/tbwisk/gormt/data/cmd"
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -32,8 +33,9 @@ func main() {
 		pkg.PackageName = input.PackageName
 		title := model.Generate(pkg)
 		c.HTML(http.StatusOK, "index.html", gin.H{
-			"title": title,
+			"title": template.HTML(title),
 		})
+
 	})
 	r.Run()
 }
